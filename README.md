@@ -1,1 +1,5 @@
-# tareapap-mlops-o2024
+# Tarea de MLOps 
+
+
+
+- Autor : Memo
