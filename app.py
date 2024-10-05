@@ -6,3 +6,10 @@ import pickle
 
 app = FastAPI()
 
+@app.get("/health")
+def health():
+    return {
+        "status" : "Todo Gucci"
+    }
+
+
