@@ -36,6 +36,8 @@ async def test_dist():
     train_data = pd.read_csv(r"./data/credit_train.csv")
     test_data = pd.read_csv(r"./data/new_data.csv")
 
+
+    # TODO: implement the test for the old dataset compared to the new dataset
     _,chi2,_,_ = chi2_contingency()
 
     _,ks = ks_2samp()
