@@ -1,4 +1,4 @@
-from scipy.stats import chi
+from scipy.stats import chi2_contingency, ks_2samp
 from fastapi import FastAPI
 import pandas as pd
 import numpy as np
@@ -34,3 +34,18 @@ async def predict(data : dict):
 async def test_dist():
 
     train_data = pd.read_csv(r"./data/credit_train.csv")
+    test_data = pd.read_csv(r"./data/new_data.csv")
+
+    _,chi2,_,_ = chi2_contingency()
+
+    _,ks = ks_2samp()
+
+    if chi2 < 0.05 or ks < 0.05:
+        print("Anda valiendo madre tu modelo")
+    else:
+        print("No anda valiendo madre tu modelo")
+
+    return {
+        "chi2" : float(chi2),
+        "ks" : float(ks)
+    }
